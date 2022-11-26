@@ -14,13 +14,13 @@ public class PartidaService {
 	@Autowired
 	private PartidaRepository repositorioPartida;
 	
-	public List<Partida> findAll()
-	{
-		return repositorioPartida.findAll();
-	}
-	
 	public Partida inserir(Partida obj)
 	{
 		return repositorioPartida.save(obj);
+	}
+	
+	public List<Partida> ranking(String lvl)
+	{
+		return repositorioPartida.ranking(lvl);
 	}
 }

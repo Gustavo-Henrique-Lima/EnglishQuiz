@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gustavonascimento.englishgame.domain.Partida;
@@ -19,9 +20,9 @@ public class PartidaResource {
 	private PartidaService servicosPartida;
 	
 	@GetMapping
-	public ResponseEntity<List<Partida>> findAll()
+	public ResponseEntity<List<Partida>> ranking(@RequestParam(value="lvl",defaultValue = "Easy") String lvl)
 	{
-		List<Partida> partidas=servicosPartida.findAll();
+		List<Partida> partidas=servicosPartida.ranking(lvl);
 		return ResponseEntity.ok().body(partidas);
 	}
 }
