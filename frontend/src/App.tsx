@@ -1,13 +1,16 @@
-import { useState } from 'react'
 import './App.css'
+import TabelaRanking from './componentes/tabelaRanking/tabela'
 
 function App() {
 
   return(
     <>
-      <main>
-          Olá mundo
-      </main>
+    <main>
+      <section>
+        <TabelaRanking/>
+      </section>
+    </main>
+          
     </>
   )
 }
