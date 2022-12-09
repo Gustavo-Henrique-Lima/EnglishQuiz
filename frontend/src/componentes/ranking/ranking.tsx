@@ -2,9 +2,8 @@ import './styles.css'
 import {useNavigate } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import 'react-dropdown/style.css';
-import Partida from '../partida/partida';
 import { CaretCircleDown,CaretCircleUp } from 'phosphor-react'
-
+import axios from 'axios';
 
 function TabelaRanking()
 {
@@ -15,9 +14,14 @@ function TabelaRanking()
     const subir=expandiu;
     const nome="Dificulty";
     const [valor,setValor]=useState(nome);
+
     useEffect(()=>{
-        console.log("TESTE")
+        axios.get("http://localhost:8081/ranking")
+        .then(response=>{
+          console.log(response.data)
+        });
       },[]);
+
     function irParaPaginaInicial()
     {
         navigate("/")
@@ -27,6 +31,7 @@ function TabelaRanking()
     {
         navigate("/partida")
     }
+
     return(
         <>
         <div className="cabeca">
@@ -49,11 +54,11 @@ function TabelaRanking()
                             </button>
                             {expandiu &&
                                     <div>
-                                    <ul>
-                                        {filtros.map(option=>(
-                                            <li onClick={()=>setValor(option)} key={option}>{option}</li>
-                                        ))}
-                                    </ul>
+                                        <ul>
+                                            {filtros.map(option=>(
+                                                <li onClick={()=>setValor(option)} key={option}>{option}</li>
+                                            ))}
+                                        </ul>
                                     </div>
                             }
                         </div>
