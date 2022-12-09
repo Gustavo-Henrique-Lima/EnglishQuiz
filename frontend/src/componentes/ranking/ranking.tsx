@@ -15,7 +15,9 @@ function TabelaRanking()
     const subir=expandiu;
     const nome="Dificulty";
     const [valor,setValor]=useState(nome);
-    
+    useEffect(()=>{
+        console.log("TESTE")
+      },[]);
     function irParaPaginaInicial()
     {
         navigate("/")
