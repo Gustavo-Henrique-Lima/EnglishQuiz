@@ -9,6 +9,6 @@ import com.gustavonascimento.englishgame.domain.Partida;
 
 public interface PartidaRepository extends JpaRepository<Partida, Long>
 {
-	@Query(nativeQuery=true,value="SELECT * FROM partidas WHERE nivel=:lvl ORDER BY pontuacao DESC;")
+	@Query(nativeQuery=true,value="SELECT * FROM partidas WHERE nivel=:lvl ORDER BY pontuacao DESC LIMIT 10;")
 	List<Partida> ranking(String lvl);
 }
