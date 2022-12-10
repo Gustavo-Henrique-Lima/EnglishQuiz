@@ -30,7 +30,7 @@ function Home()
                         Play
                     </button>
                 </div>
-            <Footer/>
+                <Footer/>
             </div>
         </>
     );
