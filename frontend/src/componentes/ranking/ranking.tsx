@@ -12,8 +12,7 @@ function TabelaRanking()
     const filtros=['Easy','Hard','Expert'];
     const abaixar=!expandiu;
     const subir=expandiu;
-    const nome="Dificulty";
-    const [valor,setValor]=useState(nome);
+    const [valor,setValor]=useState("Easy");
 
     useEffect(()=>{
         axios.get("http://localhost:8081/ranking")
@@ -36,16 +35,16 @@ function TabelaRanking()
         <>
         <div className="cabeca">
                 <button className="btn" onClick={irParaPaginaInicial}>
-                    Voltar
+                    Back
                 </button>
                 <h1>Ranking</h1>
                 <button className="btn" onClick={IrParaPartida}>
-                    Jogar
+                    Play
                 </button>
         </div>
             <div className="englishproject-card">
                     <div className="cabeca">
-                        <h2 className="englishproject-ranking-title">{valor}</h2>
+                        <h2 className="englishproject-ranking-title">Difficulty chosen: {valor}</h2>
                         <div>
                                 <button onClick={()=>setExpandiu(!expandiu)} className="filter">
                                     {valor}
@@ -76,17 +75,17 @@ function TabelaRanking()
                         <tr>
                         <td>#341</td>
                         <td>Anakin</td>
-                        <td>9</td>
+                        <td>9/10</td>
                         </tr>
                         <tr>
                         <td>#341</td>
                         <td>Anakin</td>
-                        <td>8</td>
+                        <td>8/10</td>
                         </tr>
                         <tr>
                         <td>#341</td>
                         <td>Anakin</td>
-                        <td>7</td>
+                        <td>7/10</td>
                         </tr>
                     </tbody>
                 </table>

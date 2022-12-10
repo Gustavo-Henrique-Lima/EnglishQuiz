@@ -27,7 +27,7 @@ function Home()
                         Ranking
                     </button>
                     <button className="btn" onClick={irParaPartida}>
-                        Jogar
+                        Play
                     </button>
                 </div>
             <Footer/>
