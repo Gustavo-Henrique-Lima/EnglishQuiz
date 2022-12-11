@@ -15,15 +15,16 @@ function TabelaRanking() {
     const subir = expandiu;
     const [valor, setValor] = useState("Easy");
     const [historicoPartidas, setHistorico] = useState<Ranking[]>([]);
-
+    
     useEffect(() => {
-        axios.get(`${BASE_URL}/ranking?lvl=${valor}`)
-            .then(response => {
-                setHistorico(response.data);
-            });
-    }, [valor]);
+        axios.get(`${BASE_URL}/ranking?lvl=${valor}`).then((response) => {
+            setHistorico(response.data);
+        }).catch(error => {
+          alert(error)
+        });
+      }, [valor]);
 
-    function irParaPaginaInicial() {
+      function irParaPaginaInicial() {
         navigate("/")
     }
 
