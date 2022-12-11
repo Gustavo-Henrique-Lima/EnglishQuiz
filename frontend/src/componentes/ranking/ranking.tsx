@@ -8,6 +8,7 @@ import { Ranking } from '../../models/ranking';
 import { BASE_URL } from '../../utils/request';
 
 function TabelaRanking() {
+
     const navigate = useNavigate();
     const [expandiu, setExpandiu] = useState(false);
     const filtros = ['Easy', 'Hard', 'Expert'];
@@ -91,6 +92,5 @@ function TabelaRanking() {
         </>
     );
 }
-
 
 export default TabelaRanking

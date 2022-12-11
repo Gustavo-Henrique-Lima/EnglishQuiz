@@ -9,12 +9,12 @@ function Home()
 
     function irParaRanking()
     {
-        navigate("/ranking")
+        navigate("/ranking");
     }
 
     function irParaPartida()
     {
-        navigate("/partida")
+        navigate("/partida");
     }
     
     return(
