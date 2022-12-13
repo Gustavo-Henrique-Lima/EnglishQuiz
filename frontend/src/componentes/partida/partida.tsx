@@ -1,7 +1,9 @@
+import Form from "../form/form";
+
 function Partida()
 {
     return(
-        <h1>Partida</h1>
+        <Form/>
     );
 }
 
