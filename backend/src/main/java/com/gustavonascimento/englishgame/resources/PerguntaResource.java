@@ -20,7 +20,7 @@ public class PerguntaResource {
 	private PerguntaService servicosPergunta;
 
 	@GetMapping
-	public ResponseEntity<List<Pergunta>> findAll(@RequestParam(value="lvl",defaultValue = "Easy") String nivel)
+	public ResponseEntity<List<Pergunta>> findAll(@RequestParam(value="dificuldade") String nivel)
 	{
 		List<Pergunta> find=servicosPergunta.jogo(nivel);
 		return ResponseEntity.ok().body(find);
