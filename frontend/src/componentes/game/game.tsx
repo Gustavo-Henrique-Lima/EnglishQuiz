@@ -9,23 +9,6 @@ function Game()
     const nomeDoJogador=nickName;
     const nivelDoJogo=nivel;
     const [perguntas, setPerguntas] = useState<Pergunta[]>([]);
-    const [som,setSom]=useState("");
-    const ur="../../assets/easy/age.mp3";
-    const convert = async (file: Blob ) =>
-    {
-        return new Promise((resolve,reject)=>{
-            const fileRead=new FileReader();
-            fileRead.readAsArrayBuffer(file);
-            
-            fileRead.onload= ()=>{
-                    resolve(fileRead.result)
-            };
-
-            fileRead.onerror =(error)=>{
-                    reject(error); 
-            }
-        });
-    };
 
     useEffect(()=>{
         axios.get(`${BASE_URL}/perguntas?dificuldade=${nivel}`)
