@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -19,7 +20,8 @@ public class Pergunta implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Byte[] pergunta;
+	@Lob
+	private byte[] pergunta;
 	@Column(nullable = false)
 	private String alternativa1;
 	@Column(nullable = false)
@@ -28,13 +30,15 @@ public class Pergunta implements Serializable{
 	private String certo;
 	@Column(nullable = false)
 	private String dificuldade;
+	@Column(nullable = false)
+	private String som;
 	
 	public Pergunta() 
 	{
 	}
 
-	public Pergunta(Long id, Byte[] pergunta, String alternativa1, String alternativa2,
-			String dificuldade, String certo) 
+	public Pergunta(Long id, byte[] pergunta, String alternativa1, String alternativa2,
+			String dificuldade, String certo,String som) 
 	{
 		super();
 		this.id = id;
@@ -43,6 +47,7 @@ public class Pergunta implements Serializable{
 		this.alternativa2 = alternativa2;
 		this.certo = certo;
 		this.dificuldade = dificuldade;
+		this.som=som;
 	}
 
 	public Long getId() 
@@ -55,12 +60,12 @@ public class Pergunta implements Serializable{
 		this.id = id;
 	}
 
-	public Byte[] getPergunta() 
+	public byte[] getPergunta() 
 	{
 		return pergunta;
 	}
 
-	public void setPergunta(Byte[] pergunta) 
+	public void setPergunta(byte[] pergunta) 
 	{
 		this.pergunta = pergunta;
 	}
@@ -103,6 +108,16 @@ public class Pergunta implements Serializable{
 	public void setDificuldade(String dificuldade)
 	{
 		this.dificuldade = dificuldade;
+	}
+
+	public String getSom() 
+	{
+		return som;
+	}
+
+	public void setSom(String som) 
+	{
+		this.som = som;
 	}
 
 	@Override
