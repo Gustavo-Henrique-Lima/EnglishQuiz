@@ -9,11 +9,13 @@ function Game()
     const nomeDoJogador=nickName;
     const nivelDoJogo=nivel;
     const [perguntas, setPerguntas] = useState<Pergunta[]>([]);
+    const questions=perguntas.sort(()=>{
+        return Math.random()-0.5;
+    });
 
     useEffect(()=>{
         axios.get(`${BASE_URL}/perguntas?dificuldade=${nivel}`)
         .then(response=>{
-            console.log(response.data)
             setPerguntas(response.data)
         }).catch(error => {
             alert(error)
@@ -23,6 +25,7 @@ function Game()
     return (
         <>
                 <div>
+                    
                     <table className="englishproject-ranking-table">
                         <thead>
                             <tr>
@@ -35,7 +38,8 @@ function Game()
                         </thead>
                         <tbody>
                             {
-                                perguntas.map(p => {
+                               
+                                questions.map(p => {
                                     const som=`/sons/${nivel}/${p.som}.mp3`;
                                     return (
                                         <tr key={p.id}>

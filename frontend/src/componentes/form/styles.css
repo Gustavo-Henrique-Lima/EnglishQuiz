@@ -2,9 +2,68 @@
     background-color: #283142;
     border-radius: 10px;
     padding: 30px 10px;
-    margin-top: 1rem;
-    width: 5rem;
-    height: 1rem;
+    margin: auto;
+    width: 50vw;
+    height: 30vh;
     display: block;
 }
-
+.englishproject-card form{
+   font-size: 20px;
+   position:absolute;
+    display:block;
+}
+fieldset
+{
+  width:300px;
+  height:250px;
+}
+form label
+{
+    color:white;
+  position:absolute;
+  left:19px;
+  margin-right:5px;
+  height:50px;
+}
+form input.campo_nome
+{
+  position:absolute;
+  left:100px;
+  width:150px;
+  height:30px;
+}
+form label.campo
+{
+  top: 2rem;
+}
+form label.radio
+{
+  top: 2rem;
+  left: 8rem;
+  color: white;
+}
+form input.campo_dificuldade
+{
+  top: 2rem;
+  position:absolute;
+  left:130px;
+  margin-top:2px;
+  width:225px;
+}
+button
+{
+    border-radius: 10%;
+    margin-top: 7rem;
+    width:50px;
+    height:50px;
+}
+.op
+{
+  margin-left: 10rem;
+  top: 2rem;
+}
+.op2
+{
+  margin-left: 13rem;
+  top: 2rem;
+}
